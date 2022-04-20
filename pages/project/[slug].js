@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import NavBar from '../../components/navigation'
 import fs from 'fs';
 import matter from 'gray-matter';

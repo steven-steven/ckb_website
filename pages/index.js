@@ -83,7 +83,7 @@ export default function Home(props) {
           </div>
           <Link href={`#contact_us`}>
             <button className='p-3 m-16 md:m-16 border hover:border-black border-secondary rounded-2xl md:w-56'>
-              -> {localeContent.contact_us}
+              -&gt; {localeContent.contact_us}
             </button>
           </Link>
           

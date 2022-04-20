@@ -53,7 +53,7 @@ export default function Blog({ posts }) {
 
       <section className='px-6 py-8 md:px-24 grow bg-primary'>
         <h1 id='project_entry' className='pb-3 text-2xl md:text-4xl'>Projects</h1>
-        <p className='pb-3 text-sm md:text-xl'>Dig in for insights of what's going on in the company or in the industry</p>
+        <p className='pb-3 text-sm md:text-xl'>Dig in for insights of what&apos;s going on in the company or in the industry</p>
         <hr className='h-px my-2 text-black bg-gray-400 border-0'/>
         <div className='flex flex-col md:p-10 gap-y-24'>
           {posts.map((post, idx) => {
@@ -87,7 +87,7 @@ const ProjectEntry = ({ slug, description, img_src, title, date }) => (
         />
       </div>
       <div className='flex-1 flex flex-col px-5 py-5 md:px-10'>
-        <p className='mb-3 text-lg xs:text-sm xs:text-2xl font-semibold uppercase'>{title}</p>
+        <p className='mb-3 text-sm xs:text-2xl font-semibold uppercase'>{title}</p>
         <p className='mb-3 text-sm text-gray-500 grow'>{description}</p>
         <p className='mb-10 text-sm text-blue-500'>{date}</p>
         <Link href={`/project/${slug}`}><button className='p-3 border hover:border-black border-secondary rounded-3xl md:w-56'>LEARN MORE</button></Link>
