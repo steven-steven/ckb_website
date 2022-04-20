@@ -230,28 +230,31 @@ export default function Home(props) {
               Email: witarso.ng_dp@yahoo.co.id
             </p>
           </div>
-          <div className='pl-5 mt-5 text-sm md:pl-0 md:text-right'>
-             <p className='mt-2 md:mb-5 md:mt-0'>{localeContent.companyprofile}</p>
-             <a className='relative block w-20 h-48 md:float-right group md:w-36' href="/company_profile.pdf" download="Dwiprima Company Profile">
-                <Image
-                  src='/img/companyprofile.png'
-                  className='group-hover:opacity-60'
-                  alt="Click to download Company Profile"
-                  layout="fill"
-                  objectFit="scale-down"
-                  placeholder='blur'
-                  blurDataURL='/img/companyprofile.png'
-                  quality={10}
-                />
-              <div className='absolute w-full text-center opacity-0 group-hover:opacity-100 top-1/3'>
-                <DownloadIcon className='inline w-12 h-12 p-3 border rounded-3xl'/>
-              </div>
-             </a>
-          </div>
+{
+          // <div className='pl-5 mt-5 text-sm md:pl-0 md:text-right'>
+          //    <p className='mt-2 md:mb-5 md:mt-0'>{localeContent.companyprofile}</p>
+          //    <a className='relative block w-20 h-48 md:float-right group md:w-36' href="/company_profile.pdf" download="Dwiprima Company Profile">
+          //       <Image
+          //         src='/img/companyprofile.png'
+          //         className='group-hover:opacity-60'
+          //         alt="Click to download Company Profile"
+          //         layout="fill"
+          //         objectFit="scale-down"
+          //         placeholder='blur'
+          //         blurDataURL='/img/companyprofile.png'
+          //         quality={10}
+          //       />
+          //     <div className='absolute w-full text-center opacity-0 group-hover:opacity-100 top-1/3'>
+          //       <DownloadIcon className='inline w-12 h-12 p-3 border rounded-3xl'/>
+          //     </div>
+          //    </a>
+          // </div>
+}
+
           <div className='col-span-2 mt-5 md:mt-16'>
             <hr/>
             <p className='py-5 text-xs'>
-              <span>© Copyright PT Dwiprima Karyaguna. All Rights Reserved.</span>
+              <span>© Copyright PT Cipta Khasanah Blasting. All Rights Reserved.</span>
               <span className='block md:inline md:float-right'>{localeContent.footnote}</span>
             </p>
           </div>
