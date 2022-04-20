@@ -75,11 +75,11 @@ export default function Post( { slug, content, frontmatter } ) {
 
   return (
     <div className='flex flex-col'>
-      <section className='p-12'>
+      <section className='md:p-12'>
         <NavBar/>
       </section>
 
-      <section className='px-8 pt-8 pb-20 md:px-24'>
+      <section className='px-2 xxs:px-8 pt-8 pb-20 md:px-24'>
         <div className='relative w-full h-64 mx-auto my-0 mb-10 md:w-1/2 md:h-96'>
           <Image
             src={frontmatter.img_src}

@@ -6,7 +6,7 @@ export default function NavBar() {
   const router = useRouter();
 
   return (
-    <nav className='flex items-center text-sm md:text-lg gap-x-8 sm:gap-x-16 md:gap-x-32 m-5'>
+    <nav className='flex items-center text-sm md:text-lg gap-x-2 xs:gap-x-8 sm:gap-x-16 md:gap-x-32 m-5'>
       <Link href={'/'}>  
         <div className='flex gap-x-4'>
           <div id='logo' className='relative w-10 h-10 md:w-16 md:h-16'>

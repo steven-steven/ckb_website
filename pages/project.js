@@ -42,7 +42,7 @@ export default function Blog({ posts }) {
           />
         </div>
         <div className='absolute top-0 w-full h-full bg-black bg-opacity-50'>
-          <div className='h-full flex flex-col justify-between p-12 text-white'>
+          <div className='h-full flex flex-col justify-between md:p-12 text-white'>
             <NavBar/>
             <Link href={'#project_entry'}>
               <ChevronDownIcon className='my-0 mx-auto mb-5 hover:cursor-pointer ease-in duration-300 hover:mb-0 inline w-24 h-24'/>
@@ -55,7 +55,7 @@ export default function Blog({ posts }) {
         <h1 id='project_entry' className='pb-3 text-2xl md:text-4xl'>Projects</h1>
         <p className='pb-3 text-sm md:text-xl'>Dig in for insights of what's going on in the company or in the industry</p>
         <hr className='h-px my-2 text-black bg-gray-400 border-0'/>
-        <div className='flex flex-col p-5 md:p-10 gap-y-24'>
+        <div className='flex flex-col md:p-10 gap-y-24'>
           {posts.map((post, idx) => {
             return (
               <ProjectEntry 
@@ -87,10 +87,10 @@ const ProjectEntry = ({ slug, description, img_src, title, date }) => (
         />
       </div>
       <div className='flex-1 flex flex-col px-5 py-5 md:px-10'>
-        <p className='mb-3 text-2xl font-semibold uppercase'>{title}</p>
+        <p className='mb-3 text-lg xs:text-sm xs:text-2xl font-semibold uppercase'>{title}</p>
         <p className='mb-3 text-sm text-gray-500 grow'>{description}</p>
         <p className='mb-10 text-sm text-blue-500'>{date}</p>
-        <Link href={`/project/${slug}`}><button className='p-3 border hover:border-black border-secondary rounded-3xl w-56'>LEARN MORE</button></Link>
+        <Link href={`/project/${slug}`}><button className='p-3 border hover:border-black border-secondary rounded-3xl md:w-56'>LEARN MORE</button></Link>
       </div>
       <hr className='h-px bg-gray-500 border'/>
     </div>
