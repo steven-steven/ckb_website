@@ -39,6 +39,7 @@ export default function Blog({ posts }) {
             src="/img/main-bg.png"
             layout="fill"
             objectFit="cover"
+            quality={20}
           />
         </div>
         <div className='absolute top-0 w-full h-full bg-black bg-opacity-50'>
@@ -84,6 +85,7 @@ const ProjectEntry = ({ slug, description, img_src, title, date }) => (
           src={img_src}
           layout="fill"
           objectFit="cover"
+          quality={50}
         />
       </div>
       <div className='flex-1 flex flex-col px-5 py-5 md:px-10'>

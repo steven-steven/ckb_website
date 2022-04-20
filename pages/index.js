@@ -88,7 +88,7 @@ export default function Home(props) {
           </Link>
           
         </div>
-        <div className='w-full h-screen md:w-2/5 flex flex-col bg-secondary pb-3 px-3'>
+        <div className='w-full h-screen md:w-1/2 flex flex-col bg-secondary pb-3 px-3'>
           <div className='pr-0 md:pr-8 p-8 flex justify-end'>
             {router.pathname == '/' && (
               <div className='flex z-20 items-center'>
@@ -273,6 +273,7 @@ const ProjectEntry = ({ slug, description, img_src, title, date }) => (
           alt='blog_image'
           layout="fill"
           objectFit="cover"
+          quality={50}
         />
       </div>
       <div className='flex flex-col'>
