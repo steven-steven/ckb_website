@@ -20,6 +20,7 @@ export default function contact(req, res) {
     subject: `${req.body.subject}`,
     text: req.body.message,
     html: `<div>
+      (Dari CKB)\n
       Name: ${req.body.name}\n
       Company: ${req.body.company}\n
       Phone: ${req.body.phoneNumber}\n
