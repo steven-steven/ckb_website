@@ -56,11 +56,20 @@ export default function Home(props) {
   return (
     <div>
       <section className='h-screen flex md:flex-row flex-col'>
-        <div className='flex-1'>
+        <div className='flex-col flex flex-1'>
           <NavBar/>
+
+          <div className='flex-1 flex items-center'>
+            <p className='text-5xl leading-relaxed ml-16'>Indonesia's <br/> Top <br/> Sandblasting <br/> Company</p>
+          </div>
+          <Link href={`#contact_us`}>
+            <button className='p-3 m-16 border hover:border-black border-secondary rounded-2xl w-56'>
+              -> Contact Us
+            </button>
+          </Link>
           
         </div>
-        <div className='w-2/5 bg-secondary'>
+        <div className='w-2/5 flex flex-col bg-secondary pb-3 px-3'>
           <div className='p-8 flex justify-end'>
             {router.pathname == '/' && (
               <div className='flex items-center'>
@@ -99,7 +108,16 @@ export default function Home(props) {
                   </div>
                 </div>
               </div>
-            )}
+            )}  
+          </div>
+          <div className='relative w-full h-full'>
+              <Image
+                src='/img/main-section.png'
+                alt='main banner'
+                layout='fill'
+                objectFit="cover"
+                priority
+              />
           </div>
         </div>
       </section>
@@ -113,7 +131,7 @@ export default function Home(props) {
 
         <hr className='h-px bg-gray-400 border-0'/>
 
-        <div className='flex justify-evenly divide-x'>
+        <div className='flex justify-evenly divide-x py-3'>
           {props.posts.map((post, idx) => {
             return (
               <ProjectEntry 
@@ -133,12 +151,42 @@ export default function Home(props) {
 
       <section>
         <div className='flex'>
-          <div className='w-1/2 bg-secondary'>Image22</div>
-          <div>llooo22</div>
+          <div className='w-1/2 bg-secondary p-5 h-56'>
+            <div className='relative w-full h-full'>
+              <Image
+                src='/img/redpipe.png'
+                alt='main banner'
+                layout='fill'
+                objectFit="cover"
+                priority
+              />
+            </div>
+          </div>
+          <div className='w-1/2 flex items-center justify-center'>
+            <p className='text-xl leading-loose font-serif text-center font-thin'>
+              We can handle large volumes of work, <br/>
+              with various materials, various surfaces, <br/>
+              while maintaining our values. 
+              <br/><span className='text-lime-700'>Quality. Efficiecy. Safety.</span>
+            </p>
+          </div>
         </div>
         <div className='flex'>
-          <div className='w-1/2 p-10'> <ContactForm locale={locale}/></div>
-          <div className='w-1/2 bg-secondary'>llooo</div>
+          <div className='w-1/2 p-10' id='contact_us'> 
+            <p className='text-center text-xl mb-12'>Contact Us</p>
+            <ContactForm locale={locale}/>
+          </div>
+          <div className='w-1/2 bg-secondary p-5'>
+            <div className='relative w-full h-full'>
+              <Image
+                src='/img/hbeam.png'
+                alt='main banner'
+                layout='fill'
+                objectFit="cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
 
       

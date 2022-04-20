@@ -37,6 +37,40 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
+const MarkdownComponents = {
+  p: (paragraph) => {
+    const { node } = paragraph
+  
+    if (node.children[0].tagName === "img") {
+      const image = node.children[0]
+      const metastring = image.properties.alt
+      const alt = metastring?.replace(/ *\{[^)]*\} */g, "")
+      const metaWidth = metastring.match(/{([^}]+)x/)
+      const metaHeight = metastring.match(/x([^}]+)}/)
+      const width = metaWidth ? metaWidth[1] : "768"
+      const height = metaHeight ? metaHeight[1] : "432"
+      const isPriority = metastring?.toLowerCase().match('{priority}')
+      const hasCaption = metastring?.toLowerCase().includes('{caption:')
+      const caption = metastring?.match(/{caption: (.*?)}/)?.pop()
+  
+      return (
+        <div className="text-center">
+          <Image
+            src={image.properties.src}
+            width={width}
+            height={height}
+            className="postImg"
+            alt={alt}
+            priority={isPriority}
+          />
+            {hasCaption ? <div className="caption" aria-label={caption}>{caption}</div> : null}
+        </div>
+      )
+    }
+    return <p>{paragraph.children}</p>
+  },
+}
+
 export default function Post( { slug, content, frontmatter } ) {
 
   return (
@@ -56,7 +90,14 @@ export default function Post( { slug, content, frontmatter } ) {
         </div>
         <h1 className='mb-2 text-2xl text-center md:text-4xl'>{frontmatter.title}</h1>
         <p className='mb-12 text-base text-center md:text-lg'>{frontmatter.date} | {frontmatter.author}</p>
-        <article className='mx-auto my-0 text-sm prose text-justify md:text-lg'><ReactMarkdown skipHtml={false}>{content}</ReactMarkdown></article>
+        <article className='mx-auto my-0 text-sm prose text-justify md:text-lg'>
+          <ReactMarkdown 
+            skipHtml={false}
+            components={MarkdownComponents}
+          >
+            {content}
+          </ReactMarkdown>
+        </article>
         {frontmatter.vid_src && 
           <iframe className='mx-auto my-0 mt-10' width="560" height="315" src={frontmatter.vid_src} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         }
