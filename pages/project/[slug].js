@@ -61,6 +61,8 @@ const MarkdownComponents = {
             className="postImg"
             alt={alt}
             priority={isPriority}
+            placeholder="blur"
+            blurDataURL="/img/blurdata.png"
           />
             {hasCaption ? <div className="caption" aria-label={caption}>{caption}</div> : null}
         </div>
