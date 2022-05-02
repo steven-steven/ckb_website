@@ -69,29 +69,29 @@ export default function Home(props) {
 
   return (
     <div>
-      <section className='md:h-screen flex md:flex-row flex-col-reverse'>
+      <section className='flex flex-col-reverse md:h-screen md:flex-row'>
         <div className='fixed top-0 left-0 right-0 z-10 flex h-24 md:hidden bg-opacity-80 bg-secondary'>
           <NavBar locale={locale}/>
         </div>
-        <div className='flex-col flex flex-1'>
+        <div className='flex flex-col flex-1'>
           <div className='hidden md:flex'>
             <NavBar/>
           </div>
 
-          <div className='flex-1 flex items-center'>
-            <p className='text-2xl md:text-5xl leading-relaxed ml-5 xs:ml-16 mt-12'>{ReactHtmlParser(localeContent.heading)}</p>
+          <div className='flex items-center flex-1'>
+            <p className='mt-12 ml-5 text-2xl leading-relaxed md:text-5xl xs:ml-16'>{ReactHtmlParser(localeContent.heading)}</p>
           </div>
           <Link href={`#contact_us`}>
-            <button className='p-3 m-16 md:m-16 border hover:border-black border-secondary rounded-2xl md:w-56'>
+            <button className='p-3 m-16 border md:m-16 hover:border-black border-secondary rounded-2xl md:w-56'>
               -&gt; {localeContent.contact_us}
             </button>
           </Link>
           
         </div>
-        <div className='w-full h-screen md:w-1/2 flex flex-col bg-secondary pb-3 px-3'>
-          <div className='pr-0 md:pr-8 p-8 flex justify-end'>
+        <div className='flex flex-col w-full h-screen px-3 pb-3 md:w-1/2 bg-secondary'>
+          <div className='flex justify-end p-8 pr-0 md:pr-8'>
             {router.pathname == '/' && (
-              <div className='flex z-20 items-center'>
+              <div className='z-20 flex items-center'>
                 <div className='flex items-center justify-center md:ml-10 md:flex-col'>
                   <span className='hidden w-12 mr-3 text-xs text-right md:w-auto xs:inline-block md:text-sm'>{localeContent.language}</span>
 
@@ -149,7 +149,7 @@ export default function Home(props) {
 
         <hr className='h-px bg-gray-400 border-0'/>
 
-        <div className='flex md:flex-row flex-col justify-evenly divide-x py-3'>
+        <div className='flex flex-col py-3 divide-x md:flex-row justify-evenly'>
           {props.posts.map((post, idx) => {
             return (
               <ProjectEntry 
@@ -169,7 +169,7 @@ export default function Home(props) {
 
       <section>
         <div className='flex flex-col md:flex-row'>
-          <div className='md:w-1/2 bg-secondary p-5 h-56'>
+          <div className='h-56 p-5 md:w-1/2 bg-secondary'>
             <div className='relative w-full h-full'>
               <Image
                 src='/img/redpipe.png'
@@ -179,19 +179,19 @@ export default function Home(props) {
               />
             </div>
           </div>
-          <div className='md:w-1/2 flex items-center justify-center'>
-            <p className='md:my-0 my-12 text-xl leading-loose font-serif text-center font-thin'>
+          <div className='flex items-center justify-center md:w-1/2'>
+            <p className='my-12 font-serif text-xl font-thin leading-loose text-center md:my-0'>
               {ReactHtmlParser(localeContent.blurb)}
               <span className='text-lime-700'>{localeContent.values}</span>
             </p>
           </div>
         </div>
         <div className='flex flex-col-reverse md:flex-row'>
-          <div className='md:w-1/2 p-10' id='contact_us'> 
-            <p className='text-center text-xl mb-12'>Contact Us</p>
+          <div className='p-10 md:w-1/2' id='contact_us'> 
+            <p className='mb-12 text-xl text-center'>Contact Us</p>
             <ContactForm locale={locale}/>
           </div>
-          <div className='md:w-1/2 h-96 md:h-auto bg-secondary p-5'>
+          <div className='p-5 md:w-1/2 h-96 md:h-auto bg-secondary'>
             <div className='relative w-full h-full'>
               <Image
                 src='/img/hbeam.png'
@@ -223,11 +223,11 @@ export default function Home(props) {
               </div>
               <span className='md:text-lg'>PT Cipta Khasanah Blasting</span>
             </div>
-            <p className='pl-5 mt-5 break-words text-sm'>
-              Jl. Raya Anyer No.122 Cilegon – Banten <br/>
+            <p className='pl-5 mt-5 text-sm break-words'>
+              Jl. Raya Anyer No.122, Warnasari, Citangkil, Kota Cilegon, Banten, 43443 <br/>
               Telp: (0254) 312114<br/>
               Fax: (0254) 310084<br/>
-              Email: witarso.ng_dp@yahoo.co.id
+              Email: ciptakhasanahblasting21@gmail.com
             </p>
           </div>
 {
@@ -269,7 +269,7 @@ export default function Home(props) {
 
 const ProjectEntry = ({ slug, description, img_src, title, date }) => (
   <Link href={`/project/${slug}`}>
-    <div className='flex-1 flex p-5 flex-col hover:border hover:border-gray-400 hover:cursor-pointer'>
+    <div className='flex flex-col flex-1 p-5 hover:border hover:border-gray-400 hover:cursor-pointer'>
       <div className='relative h-56'>
         <Image
           src={img_src}
