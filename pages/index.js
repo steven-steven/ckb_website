@@ -268,7 +268,7 @@ export default function Home(props) {
 
 
 const ProjectEntry = ({ slug, description, img_src, title, date }) => (
-  <Link href={`/project/${slug}`}>
+  <Link href={`/project/${slug}`} locale={false}>
     <div className='flex flex-col flex-1 p-5 hover:border hover:border-gray-400 hover:cursor-pointer'>
       <div className='relative h-56'>
         <Image
