@@ -12,10 +12,10 @@
     "@heroicons/react": "^1.0.6",
     "dotenv": "^16.0.0",
     "gray-matter": "^4.0.3",
-    "next": "12.1.5",
+    "next": "^15.0.2",
     "nodemailer": "^6.7.3",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
+    "react": "^18",
+    "react-dom": "^18",
     "react-html-parser": "^2.0.2",
     "react-markdown": "^8.0.2"
   },
